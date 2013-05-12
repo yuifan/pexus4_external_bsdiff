@@ -12,14 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifneq ($(TARGET_SIMULATOR),true)
-
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := bsdiff.c
 LOCAL_MODULE := bsdiff
-LOCAL_MODULE_TAGS := eng
 LOCAL_C_INCLUDES += external/bzip2
 LOCAL_STATIC_LIBRARIES := libbz
 include $(BUILD_HOST_EXECUTABLE)
@@ -28,9 +25,6 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := bspatch.c
 LOCAL_MODULE := bspatch
-LOCAL_MODULE_TAGS := eng
 LOCAL_C_INCLUDES += external/bzip2
 LOCAL_STATIC_LIBRARIES := libbz
 include $(BUILD_HOST_EXECUTABLE)
-
-endif  # !TARGET_SIMULATOR
